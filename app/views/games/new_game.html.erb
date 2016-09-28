@@ -1,0 +1,23 @@
+<div class="">
+  <%= form_tag({:controller => "games", :action => "new_match"}, :method => "get") do %>
+    <%= submit_tag "Partida" %>
+  <% end %>
+</div>
+
+<div class="">
+  <%= form_tag({:controller => "games", :action => "new_multiple_match"}, :method => "post") do %>
+    <%= submit_tag "Partida Multiple" %>
+  <% end %>
+</div>
+
+<div class="">
+  <%= form_tag({:controller => "games", :action => "show_ranking"}, :method => "get") do %>
+    <%= submit_tag "Ranking" %>
+  <% end %>
+</div>
+
+<div class="">
+  <%= form_tag({:controller => "games", :action => "new_challenge"}, :method => "get") do %>
+    <%= submit_tag "Retar" %>
+  <% end %>
+</div>
