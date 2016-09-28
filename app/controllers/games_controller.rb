@@ -13,5 +13,6 @@ class GamesController < ApplicationController
   end
 
   def home
+    
   end
 end
