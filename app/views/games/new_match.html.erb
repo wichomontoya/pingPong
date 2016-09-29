@@ -1,0 +1,14 @@
+
+<h1>Nueva Partida</h1>
+
+<h4>Jugador</h4>
+<p>
+<%= @player.email %>
+</p>
+
+<h4>Oponentes</h4>
+
+<%= form_tag games_create_match_path, method: :post, class: "col-xs-12" do %>
+	<%= select_tag :opponent , options_from_collection_for_select(@opponents, "id", "email"), {:multiple => true, :size => 10, :class => "form-control"}%>
+	<%= submit_tag "Retar", class: "btn btn-primary" %>
+<%end%>
