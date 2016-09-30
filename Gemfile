@@ -45,6 +45,7 @@ group :development, :test do
   gem 'capybara-webkit'
   gem 'cucumber-rails', :require => false
   gem 'shoulda-matchers'
+  gem 'rails-controller-testing'
 end
 
 group :development do

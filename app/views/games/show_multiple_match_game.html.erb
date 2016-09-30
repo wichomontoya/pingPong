@@ -1,0 +1,24 @@
+<div class="container">
+  <%= form_tag save_results_path , method: 'post' do %>
+  <div class="">
+    <h3>Jugador</h3>
+    <p>
+      <%=@player.email%>
+    </p>
+    <%= number_field_tag :first_player, 0, :min => 0%>
+    <%= number_field_tag :second_player, 0, :min => 0%>
+  </div>
+  <div class="">
+    <h3>VS</h3>
+  </div>
+  <div class="">
+    <h3>Oponente</h3>
+    <p>
+      <%=@opponent.email%>
+    </p>
+    <%= number_field_tag :first_opponent, 0, :min => 0%>
+    <%= number_field_tag :second_opponent, 0, :min => 0%>
+  </div>
+    <%= submit_tag "Guardar", class: "btn btn-success" %>
+  <%end%>
+</div>

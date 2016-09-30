@@ -2,9 +2,36 @@
 
 <h2>Aqui se mostrara la lista de todos los jugadores con su respectivo puntaje</h2>
 <div class="">
-  <%@players.each do |p|%>
-  <p>
-    <%=p.email%>
-  </p>
-  <%end%>
+  <table class="table table-striped">
+    <th>
+      <tr>
+        <td>
+          Puesto
+        </td>
+        <td>
+          Jugador
+        </td>
+        <td>
+          Puntaje
+        </td>
+      </tr>
+    </th>
+    <%@players.each do |p|%>
+      <tr>
+        <td>
+          1
+        </td>
+        <td>
+          <%=p.email%>
+        </td>
+        <td>
+          <%=p.score%>
+        </td>
+      </tr>
+    <%end%>
+  </table>
 </div>
+
+<button type="button" name="button">
+  <a href="/games/home">Nueva Partida</a>
+</button>

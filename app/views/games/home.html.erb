@@ -7,33 +7,17 @@
   </p>
 
   <div class="">
-    <%= form_tag({:controller => "games", :action => "new_match"}, :method => "get") do %>
-      <%= submit_tag "Partida" %>
-    <% end %>
+    <%=link_to "Nueva Partida", games_new_match_path, method: "get"%>
   </div>
 
   <div class="">
-    <%= form_tag({:controller => "games", :action => "new_multiple_match"}, :method => "post") do %>
-      <%= submit_tag "Partida Multiple" %>
-    <% end %>
+    <%=link_to "Ranking", games_show_ranking_path, method: "get"%>
   </div>
 
   <div class="">
-    <%= form_tag({:controller => "games", :action => "show_ranking"}, :method => "get") do %>
-      <%= submit_tag "Ranking" %>
-    <% end %>
+    <%=link_to "Retar", games_new_challenge_path, method: "get"%>
   </div>
 
-  <div class="">
-    <%= form_tag({:controller => "games", :action => "new_challenge"}, :method => "get") do %>
-      <%= submit_tag "Retar" %>
-    <% end %>
-  </div>
-
-  <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
+  <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %>
 
 </div>
-
-<footer>
-
-</footer>
