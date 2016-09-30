@@ -4,12 +4,12 @@ class GamesController < ApplicationController
   def new_match
     call_players
   end
-  #Revisar bien lños parametros que llegan del formulario, ya que no guarda el id del oponente
+  #Revisar bien los parametros que llegan del formulario, ya que no guarda el id del oponente
   def create_match
-    match=Game.new(:player_id => current_user.id, :opponent_id => params[:id])
+    @match=Game.new(:player_id => current_user.id, :opponent_id => params[:opponent])
     binding pry
-    match.save
-    redirect_to "/games/new_game"
+    @match.save
+    redirect_to "/games/:id/match"
   end
 
   def show_ranking

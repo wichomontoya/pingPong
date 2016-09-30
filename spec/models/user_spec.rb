@@ -15,6 +15,10 @@ RSpec.describe User, type: :model do
           expect(@user.email).not_to be_nil
           expect(@user).not_to allow_value("okemail@com").for(:email)
         end
+
+        it "must have a first name" do
+          expect(@user).to 
+        end
     end
   end
 end

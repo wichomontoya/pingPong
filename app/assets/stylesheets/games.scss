@@ -2,26 +2,6 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#carrusel{float:left; width:601px; overflow:hidden; height:205px; position:relative; margin-top:20px;}
-#carrusel .izquierda_flecha{position:absolute; left:10px; z-index:1; top:50%; margin-top:-9px;}
-#carrusel .derecha_flecha{position:absolute; right:10px; z-index:1; top:50%; margin-top:-9px;}
-.carrusel{width:4000px;left:0px; position:absolute; z-index:0}
-.carrusel>div{
-    float: left;
-    height: 203px;
-    margin-right: 5px;
-    width: 195px;
-    text-align:center;
-}
-.carrusel .img_carrusel{cursor:pointer;}
-
-#content {
-    float:left;
-    width:600px;
-    margin-bottom:40px;
-    margin:0px auto;
-}
-
-.product {
-    border:#CCCCCC 1px solid;
+.container{
+  background-image: url("http://www.baltana.com/files/wallpapers-2/Ping-Pong-Wallpaper-HD-08934.jpg");
 }

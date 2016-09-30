@@ -1,14 +1,22 @@
 
-<h1>Nueva Partida</h1>
-
-<h4>Jugador</h4>
-<p>
-<%= @player.email %>
-</p>
-
-<h4>Oponentes</h4>
-
-<%= form_tag games_create_match_path, method: :post, class: "col-xs-12" do %>
-	<%= select_tag :opponent , options_from_collection_for_select(@opponents, "id", "email"), {:multiple => true, :size => 10, :class => "form-control"}%>
-	<%= submit_tag "Retar", class: "btn btn-primary" %>
-<%end%>
+<div class="col-md-8 col-xs-12 col-md-offset-2">
+	<h1>Nueva Partida</h1>
+	<br>
+	<br>
+	<div class="col-md-4">
+		<h4>Jugador</h4>
+		<p>
+		<%= @player.email %>
+		</p>
+	</div>
+	<div class="col-md-4">
+		<h3>VS</h3>
+	</div>
+	<div class="col-md-4">
+		<h4>Oponentes</h4>
+		<%= form_tag games_create_match_path, method: :post, class: "col-xs-12" do %>
+			<%= select_tag :opponent , options_from_collection_for_select(@opponents, "id", "email"), {:multiple => true, :size => 10, :class => "form-control"}%>
+			<%= submit_tag "Retar", class: "btn btn-success" %>
+		<%end%>
+	</div>
+</div>
