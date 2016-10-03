@@ -12,14 +12,29 @@
     <p class="navbar-text pull-right">
       <% if user_signed_in? %>
         Bienvenido <strong><%= current_user.nick_name %></strong>
-        <%= link_to 'Mi Perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+        <div class="btn btn-primary">
+          <%= link_to 'Inicio', root_path, :class => 'navbar-link' %>
+        </div>
+        <div class="btn btn-success">
+        <%= link_to 'Mi Perfil', edit_user_registration_path, :class => 'navbar-link' %>
+        </div>
+        <div class="btn btn-warning">
+        <%= link_to 'Mis Juegos', games_see_my_games_path, :class => 'navbar-link' %> 
+        </div>
+        <div class="btn btn-danger">
         <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+        </div>
       <% else %>
         <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
         <%= link_to "Iniciar Sesión", new_user_session_path, :class => 'navbar-link'  %>
       <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <%= yield %>
+
+      <div class="field col-sm-8 col-sm-offset-2">
+        <div>
+          <%= yield %>
+        </div>
+      </div>
   </body>
 </html>

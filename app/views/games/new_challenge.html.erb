@@ -1,9 +1,8 @@
 <h1>Nuevo reto</h1>
-<%@opponents.each do |o|%>
 
 
-<%end%>
+	<%= form_tag games_create_match_path, method: :post, class: "col-xs-12" do %>
+			<%= select_tag :opponent , options_from_collection_for_select(@opponents, "id", "nick_name"), {:multiple => false, :required => true, :size => 10, :class => "form-control"}%>
+	<%end%>
 
-<div class="">
 
-</div>

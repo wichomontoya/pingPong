@@ -39,11 +39,9 @@ class GamesController < ApplicationController
       @game.save
       @winner = params[:winner]
       if @winner === "player"
-        @player.score = 0
         @player.score = @player.score + 1
         @player.save
       elsif @winner === "opponent"
-        @opponent.score = 0
         @opponent.score = @opponent.score + 1
         @opponent.save
       else
@@ -60,11 +58,9 @@ class GamesController < ApplicationController
         end
       end
       if counter > 0
-        @player.score = 0
         @player.score += 3
         @player.save
       else 
-        @opponent.score = 0
         @opponent.score += 3
         @opponent.save
       end
@@ -96,7 +92,17 @@ private
 
   def call_players
     @player= current_user
+    if @player.score == nil
+      @player.score = 0
+      @player.save
+    end
     @opponents= User.where.not(:id => current_user.id)
+    @opponents.each do |o|
+      if o.score == nil
+        o.score = 0
+        o.save
+      end
+    end
   end
 
   def access_players

@@ -1,7 +1,7 @@
 <h1>Lista de juegos</h1>
 
 <div>
-	<table class="table table-striped">
+	<table class="table table-bordered">
 		<thead>
 			<tr>
 				<th>Jugador</th>
@@ -14,7 +14,6 @@
 				<%player=User.find(g.player_id)%>
 				<%opponent=User.find(g.opponent_id)%>
 				<tr>
-					<td></td>
 					<td><%=player.nick_name%></td>
 					<td><%=opponent.nick_name%></td>
 					<td><%=g.created_at%></td>

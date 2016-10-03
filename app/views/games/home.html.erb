@@ -1,21 +1,31 @@
-<div class="container img">
-
-  <h1>Ping Pong Match</h1>
-
-  <p>
-    Lorem ipsum
-  </p>
-
-  <div class="">
-    <%=link_to "Nueva Partida", games_new_match_path, method: "get"%>
+<div class="container-fluid img-responsive">
+  <div class="col-sm-8 col-sm-offset-2 text-center">
+    <h1>Ping Pong Match</h1>
+    <br>
+    <br>
+    <p>
+      Una aplicacion desarrollada para los aficionados la Ping Pong, en ella podras llevar el registro de tus juegos con otros usuarios; ademas podras retar a aquellos con los que aun no has jugado y lograr ser el REY DE LA CANCHA
+    </p>
+    <br>
+    <br>
+    <div class="row">
+      <div class="btn btn-success col-xs-4 col-xs-offset-4">
+        <%=link_to "Nueva Partida", games_new_match_path, method: "get"%>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="btn btn-success col-xs-4 col-xs-offset-4">
+        <%=link_to "Ranking", games_show_ranking_path, method: "get"%>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="btn btn-success col-xs-4 col-xs-offset-4">
+        <%=link_to "Retar", games_new_challenge_path, method: "get"%>
+      </div>
+    </div>
   </div>
-
-  <div class="">
-    <%=link_to "Ranking", games_show_ranking_path, method: "get"%>
-  </div>
-
-  <div class="">
-    <%=link_to "Retar", games_new_challenge_path, method: "get"%>
-  </div>
-
+  <br>
+  <br>
 </div>

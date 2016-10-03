@@ -16,3 +16,27 @@
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+
+body {
+    background-image: url("http://www.qqxxzx.com/images/green-background-images/green-background-images-2.jpg");
+    font-family: 'Roboto', sans-serif;
+    color: #FFF;
+}
+
+input {
+	color: #000;
+}
+
+a:link  
+{  
+ text-decoration:none; 
+}
+
+a:hover{
+	color: #000;
+}
+
+a{
+	color: #FFF;
+}

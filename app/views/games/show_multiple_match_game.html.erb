@@ -1,32 +1,38 @@
-<div class="container">
   <%= form_tag save_results_path , method: 'post' do %>
-  <div class="">
+  <div class="col-sm-5 text-center">
     <h3>Jugador</h3>
     <p>
-      <%=@player.email%>
+      <%=@player.nick_name%>
     </p>
     <%= radio_button_tag(:winner1, "player") %>
+    <%= label_tag(:winner1, "Primer Partido") %>
     <br>
     <%= radio_button_tag(:winner2, "player") %>
+    <%= label_tag(:winner2, "Segundo Partido") %>
     <br>
     <%= radio_button_tag(:winner3, "player") %>
+    <%= label_tag(:winner3, "Tercer Partido") %>
     <br>
   </div>
-  <div class="">
+  <div class="col-sm-2 text-center">
     <h3>VS</h3>
   </div>
-  <div class="">
+  <div class="col-sm-5 text-center">
     <h3>Oponente</h3>
     <p>
-      <%=@opponent.email%>
+      <%=@opponent.nick_name%>
     </p>
     <%= radio_button_tag(:winner1, "opponent") %>
+    <%= label_tag(:winner1, "Primer Partido") %>
     <br>
     <%= radio_button_tag(:winner2, "opponent") %>
+    <%= label_tag(:winner2, "Segundo Partido") %>
     <br>
     <%= radio_button_tag(:winner3, "opponent") %>
+    <%= label_tag(:winner3, "Tercer Partido") %>
     <br>
   </div>
+  <div class="col-sm-12 text-center">
     <%= submit_tag "Guardar", class: "btn btn-success" %>
+  </div>
   <%end%>
-</div>

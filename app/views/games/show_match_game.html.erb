@@ -1,26 +1,31 @@
-<div class="container">
-  <%= form_tag save_results_path , method: 'post' do %>
-  <div class="">
-    <h3>Jugador</h3>
-    <p>
-      <%=@player.email%>
-    </p>
-    <%= radio_button_tag(:winner, "player") %>
-    <br>
-    <%= number_field_tag :results_player, nil, :min => 0%>
-  </div>
-  <div class="">
-    <h3>VS</h3>
-  </div>
-  <div class="">
-    <h3>Oponente</h3>
-    <p>
-      <%=@opponent.email%>
-    </p>
-    <%= radio_button_tag(:winner, "opponent") %>
-    <br>
-    <%= number_field_tag :results_opponent, nil, :min => 0%>
-  </div>
+<%= form_tag save_results_path , method: 'post' do %>
+  <div class="row">
+    <div class="col-sm-5 text-center">
+      <h3>Jugador</h3>
+      <p>
+        <%=@player.nick_name%>
+      </p>
+      <br>
+      <%= radio_button_tag(:winner, "player") %>
+      <br>
+      <%= number_field_tag :results_player, 0, :min => 0%>
+    </div>
+    <div class="col-sm-2 text-center">
+      <h3>VS</h3>
+    </div>
+    <div class="col-sm-5 text-center">
+      <h3>Oponente</h3>
+      <p>
+        <%=@opponent.nick_name%>
+      </p>
+      <br>
+      <%= radio_button_tag(:winner, "opponent") %>
+      <br>
+      <%= number_field_tag :results_opponent, 0, :min => 0%>
+    </div>
+  <br>
+  <br>
+  <div class="col-sm-12 text-center">
     <%= submit_tag "Guardar", class: "btn btn-success" %>
-  <%end%>
-</div>
+  </div>
+<%end%>
