@@ -5,8 +5,12 @@
     <p>
       <%=@player.email%>
     </p>
-    <%= number_field_tag :first_player, 0, :min => 0%>
-    <%= number_field_tag :second_player, 0, :min => 0%>
+    <%= radio_button_tag(:winner1, "player") %>
+    <br>
+    <%= radio_button_tag(:winner2, "player") %>
+    <br>
+    <%= radio_button_tag(:winner3, "player") %>
+    <br>
   </div>
   <div class="">
     <h3>VS</h3>
@@ -16,8 +20,12 @@
     <p>
       <%=@opponent.email%>
     </p>
-    <%= number_field_tag :first_opponent, 0, :min => 0%>
-    <%= number_field_tag :second_opponent, 0, :min => 0%>
+    <%= radio_button_tag(:winner1, "opponent") %>
+    <br>
+    <%= radio_button_tag(:winner2, "opponent") %>
+    <br>
+    <%= radio_button_tag(:winner3, "opponent") %>
+    <br>
   </div>
     <%= submit_tag "Guardar", class: "btn btn-success" %>
   <%end%>

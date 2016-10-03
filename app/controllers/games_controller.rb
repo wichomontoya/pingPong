@@ -1,5 +1,5 @@
 class GamesController < ApplicationController
-    before_action :authenticate_user!
+    before_action :authenticate_user!, :except => :home
 
 
   def home
@@ -31,26 +31,51 @@ class GamesController < ApplicationController
   end
 
   def save_results
-    binding.pry
     @winner
-    game=Game.find(params[:id])
-    player=User.find(game.player_id)
-    opponent=User.find(game.opponent_id)
-    if game.game_type == "single_match"
-      game.score_player=params[:results_player].to_i
-      game.score_opponent=params[:results_opponent].to_i
-      game.save
+    access_players
+    if @game.game_type == "single_match"
+      @game.score_player=params[:results_player].to_i
+      @game.score_opponent=params[:results_opponent].to_i
+      @game.save
+      @winner = params[:winner]
+      if @winner === "player"
+        @player.score = 0
+        @player.score = @player.score + 1
+        @player.save
+      elsif @winner === "opponent"
+        @opponent.score = 0
+        @opponent.score = @opponent.score + 1
+        @opponent.save
+      else
+        redirect_to new_match_path
+      end
+    elsif @game.game_type == "multiple_match"
+      @winner = [params[:winner1], params[:winner2], params[:winner3]]
+      counter = 0
+      @winner.each do |w|
+        if w === "player"
+          counter += 1
+        elsif w === "opponent"
+          counter = counter - 1
+        end
+      end
+      if counter > 0
+        @player.score = 0
+        @player.score += 3
+        @player.save
+      else 
+        @opponent.score = 0
+        @opponent.score += 3
+        @opponent.save
+      end
     end
-    
+    binding.pry
     redirect_to games_show_ranking_path
-  end
-
-  def show_winner
-    @winner=User.find(params[:id])
   end
 
   def show_ranking
     @players=User.all
+    @players=@players.sort_by(&:score).reverse
   end
 
   def new_challenge
@@ -63,6 +88,10 @@ class GamesController < ApplicationController
   def destroy
   end
 
+  def see_my_games
+    @games=Game.where("player_id = #{current_user.id} OR opponent_id = #{current_user.id}")
+    @games=@games.sort_by(&:created_at).reverse
+  end
 
 private
 

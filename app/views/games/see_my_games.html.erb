@@ -1,0 +1,25 @@
+<h1>Lista de juegos</h1>
+
+<div>
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th>Jugador</th>
+				<th>Oponente</th>
+				<th>Fecha</th>
+			</tr>
+		</thead>
+		<tbody>
+			<%@games.each do |g|%>
+				<%player=User.find(g.player_id)%>
+				<%opponent=User.find(g.opponent_id)%>
+				<tr>
+					<td></td>
+					<td><%=player.nick_name%></td>
+					<td><%=opponent.nick_name%></td>
+					<td><%=g.created_at%></td>
+				</tr>
+			<%end%>
+		</tbody>
+	</table>
+</div>

@@ -23,11 +23,13 @@ Rails.application.routes.draw do
 
   get 'games/:id/show_multiple_match_game', to: 'games#show_multiple_match_game', as: "show_multiple_match_game" 
 
+  get 'games/see_my_games'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 root to:"games#home"
 devise_for :users, controllers: {
-        sessions: 'users/sessions'
+        sessions: 'users/sessions',
+        omniauth_callbacks: 'omniauth_callbacks'
       }
 
 end

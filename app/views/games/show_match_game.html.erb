@@ -6,6 +6,7 @@
       <%=@player.email%>
     </p>
     <%= radio_button_tag(:winner, "player") %>
+    <br>
     <%= number_field_tag :results_player, nil, :min => 0%>
   </div>
   <div class="">
@@ -17,6 +18,7 @@
       <%=@opponent.email%>
     </p>
     <%= radio_button_tag(:winner, "opponent") %>
+    <br>
     <%= number_field_tag :results_opponent, nil, :min => 0%>
   </div>
     <%= submit_tag "Guardar", class: "btn btn-success" %>

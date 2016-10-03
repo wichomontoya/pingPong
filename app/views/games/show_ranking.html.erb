@@ -1,34 +1,34 @@
 <h1>Ranking</h1>
 
-<h2>Aqui se mostrara la lista de todos los jugadores con su respectivo puntaje</h2>
+<h2>El rey de la cancha es!!!!</h2>
+<h3><%=@players[0].nick_name%></h3>
+<p>con <%=@players[0].score%> puntos</p>
 <div class="">
-  <table class="table table-striped">
-    <th>
+  <table class="table table-striped talbe-bordered text-center col-sm-8">
+    <thead>
       <tr>
-        <td>
-          Puesto
-        </td>
-        <td>
+        <th>
           Jugador
-        </td>
-        <td>
+        </th>
+        <th>
           Puntaje
-        </td>
+        </th>
       </tr>
-    </th>
+    </thead>
+    <tbody>
     <%@players.each do |p|%>
-      <tr>
-        <td>
-          1
-        </td>
-        <td>
-          <%=p.email%>
-        </td>
-        <td>
-          <%=p.score%>
-        </td>
-      </tr>
+      <%if p != @players[0]%>
+        <tr>
+          <td>
+            <%=p.nick_name%>
+          </td>
+          <td>
+            <%=p.score%>
+          </td>
+        </tr>
+      <%end%>
     <%end%>
+    </tbody>
   </table>
 </div>
 
