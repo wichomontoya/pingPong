@@ -69,7 +69,6 @@ class GamesController < ApplicationController
         @opponent.save
       end
     end
-    binding.pry
     redirect_to games_show_ranking_path
   end
 
