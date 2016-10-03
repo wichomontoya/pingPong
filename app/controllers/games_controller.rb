@@ -71,7 +71,6 @@ class GamesController < ApplicationController
   def show_ranking
     @players=User.all
     @players=@players.sort_by(&:score).reverse
-    @players.save
   end
 
   def new_challenge
