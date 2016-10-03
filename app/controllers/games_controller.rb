@@ -70,7 +70,7 @@ class GamesController < ApplicationController
 
   def show_ranking
     @players=User.all
-    @players=@players.sort_by(&:score).reverse
+    @players=@players.where.not(:score => nil).sort_by(&:score).reverse
   end
 
   def new_challenge
