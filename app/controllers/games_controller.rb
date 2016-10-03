@@ -60,7 +60,7 @@ class GamesController < ApplicationController
       if counter > 0
         @player.score += 3
         @player.save
-      else 
+      else
         @opponent.score += 3
         @opponent.save
       end
@@ -71,6 +71,7 @@ class GamesController < ApplicationController
   def show_ranking
     @players=User.all
     @players=@players.sort_by(&:score).reverse
+    @players.save
   end
 
   def new_challenge
